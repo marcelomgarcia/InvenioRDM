@@ -2,8 +2,8 @@
 
 ## Installation
 
-Debian installation: [install_debian.md](install_debian.md)
-AlmaLinux installation: [install_almalinux.md](install_almalinux.md)
+* Debian installation: [install_debian.md](install_debian.md)
+* AlmaLinux installation: [install_almalinux.md](install_almalinux.md)
 
 ## Invenio CLI
 
