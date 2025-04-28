@@ -20,6 +20,7 @@ Installing dependencies
 
 ```bash
 [vagrant@domain ~]$ sudo dnf install wget curl
+[vagrant@minint-2gof9o1 iso]$ sudo dnf install bzip2
 [vagrant@domain ~]$ sudo dnf install dkms kernel-devel kernel-headers gcc make bzip2 perl elfutils-libelf-devel
 ```
 
@@ -43,3 +44,13 @@ Downloading the Guest Additions ISO
 ```bash
 [vagrant@domain ~]$ wget https://download.virtualbox.org/virtualbox/7.0.22/VBoxGuestAdditions_7.0.22.iso
 ```
+
+Mounting the ISO
+
+```bash
+[vagrant@minint-2gof9o1 ~]$ sudo mkdir /mnt/iso
+[vagrant@minint-2gof9o1 ~]$ sudo mount VBoxGuestAdditions_7.0.22.iso /mnt/iso
+mount: /mnt/iso: WARNING: source write-protected, mounted read-only.
+[vagrant@minint-2gof9o1 ~]$
+```
+
