@@ -66,20 +66,26 @@ Vagrant.configure("2") do |config|
   # Enable provisioning with a shell script. Additional provisioners such as
   # Ansible, Chef, Docker, Puppet and Salt are also available. Please see the
   # documentation for more information about their specific syntax and use.
-  # config.vm.provision "shell", inline: <<-SHELL
-  #   apt-get update
-  #   apt-get install -y apache2
-  # SHELL
-
-  config.vm.provision "ansible" do |ansible|
-    ansible.playbook = "invent.yml"
-    ansible.extra_vars = {
-      ansible_python_interpreter: "/usr/bin/python3",
-      ansible_become_pass: "vagrant",
-      ansible_user: "vagrant",
-      ansible_password: "vagrant",
-      ansible_host_key_checking: false,
-      ansible_ssh_common_args: "-o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null"
-    }
-  end
+  config.vm.provision "shell", inline: <<-SHELL
+    echo "==> Update system <=="
+    dnf update -y
+    echo "" 
+    echo "==> Development Tools <=="
+    dnf install -y "Development Tools"
+    echo ""
+    echo "==> Extra tools <=="    
+    dnf install -y kernel-devel kernel-headers gcc make bzip2 perl elfutils-libelf-devel python3-devel
+    echo ""
+    echo "==> Basic tools <=="    
+    dnf install -y wget curl git-all vim-enhanced
+    echo ""
+    echo "==> Dependencies for InvenioDRM <=="    
+    dnf install -y cairo cairo-devel dejavu-sans-fonts dejavu-sans-mono-fonts dejavu-serif-fonts
+    echo ""
+    echo "==> Epel release <=="
+    dnf install -y epel-release
+    echo ""
+    echo "==> ImageMagick <=="
+    dnf install -y ImageMagick
+  SHELL
 end
