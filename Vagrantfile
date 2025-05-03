@@ -12,6 +12,7 @@ Vagrant.configure("2") do |config|
   # config.vm.box_version = "12.20250126.1"
   config.vm.box = "almalinux/9"
   config.vm.box_version = "9.5.20241203"
+  config.vm.hostname = "invent"
 
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine. In the example below,
@@ -51,7 +52,7 @@ Vagrant.configure("2") do |config|
   # Example for VirtualBox:
   #
   config.vm.provider "virtualbox" do |vb|
-    Display the VirtualBox GUI when booting the machine
+    # Display the VirtualBox GUI when booting the machine
     vb.gui = true
   
     # Customize the amount of memory on the VM:
@@ -69,4 +70,16 @@ Vagrant.configure("2") do |config|
   #   apt-get update
   #   apt-get install -y apache2
   # SHELL
+
+  config.vm.provision "ansible" do |ansible|
+    ansible.playbook = "invent.yml"
+    ansible.extra_vars = {
+      ansible_python_interpreter: "/usr/bin/python3",
+      ansible_become_pass: "vagrant",
+      ansible_user: "vagrant",
+      ansible_password: "vagrant",
+      ansible_host_key_checking: false,
+      ansible_ssh_common_args: "-o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null"
+    }
+  end
 end
