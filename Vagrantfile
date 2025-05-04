@@ -66,11 +66,17 @@ Vagrant.configure("2") do |config|
   # Enable provisioning with a shell script. Additional provisioners such as
   # Ansible, Chef, Docker, Puppet and Salt are also available. Please see the
   # documentation for more information about their specific syntax and use.
+  config.vm.provision "file", source: "files/bash_aliases", destination: "/home/vagrant/.bash_aliases"
+  config.vm.provision "file", source: "files/tmux.conf", destination: "/home/vagrant/.tmux.conf"
+  config.vm.provision "file", source: "files/vimrc", destination: "/home/vagrant/.vimrc"
   config.vm.provision "shell", inline: <<-SHELL
-    echo "==> Epel release <=="
-    dnf install -y epel-release
+  dnf install -y epel-release
+  echo "==> Epel release <=="
     echo ""
     echo "==> Ansible <=="
     dnf -y install ansible
+    echo ""
+    echo "==> tmux <=="
+    dnf -y install tmux
   SHELL
 end
