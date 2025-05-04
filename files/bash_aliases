@@ -1,0 +1,6 @@
+alias ll='ls -lh'
+alias lll='ll -tr'
+alias lls='ll -Sr'
+alias tnew='tmux new -s INVENT'
+alias ta='tmux a -d'
+alias ping='ping -c 3
