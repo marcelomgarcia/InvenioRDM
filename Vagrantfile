@@ -67,25 +67,10 @@ Vagrant.configure("2") do |config|
   # Ansible, Chef, Docker, Puppet and Salt are also available. Please see the
   # documentation for more information about their specific syntax and use.
   config.vm.provision "shell", inline: <<-SHELL
-    echo "==> Update system <=="
-    dnf update -y
-    echo "" 
-    echo "==> Development Tools <=="
-    dnf install -y "Development Tools"
-    echo ""
-    echo "==> Extra tools <=="    
-    dnf install -y kernel-devel kernel-headers gcc make bzip2 perl elfutils-libelf-devel python3-devel
-    echo ""
-    echo "==> Basic tools <=="    
-    dnf install -y wget curl git-all vim-enhanced
-    echo ""
-    echo "==> Dependencies for InvenioDRM <=="    
-    dnf install -y cairo cairo-devel dejavu-sans-fonts dejavu-sans-mono-fonts dejavu-serif-fonts
-    echo ""
     echo "==> Epel release <=="
     dnf install -y epel-release
     echo ""
-    echo "==> ImageMagick <=="
-    dnf install -y ImageMagick
+    echo "==> Ansible <=="
+    dnf -y install ansible
   SHELL
 end
