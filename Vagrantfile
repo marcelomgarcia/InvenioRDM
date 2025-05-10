@@ -18,7 +18,7 @@ Vagrant.configure("2") do |config|
   # within the machine from a port on the host machine. In the example below,
   # accessing "localhost:8080" will access port 80 on the guest machine.
   # NOTE: This will enable public access to the opened port
-  # config.vm.network "forwarded_port", guest: 80, host: 8080
+  config.vm.network "forwarded_port", guest: 5000, host: 5000
 
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine and only allow access
@@ -69,10 +69,9 @@ Vagrant.configure("2") do |config|
   config.vm.provision "file", source: "files/bash_aliases", destination: "/home/vagrant/.bash_aliases"
   config.vm.provision "file", source: "files/dot_tmux.conf", destination: "/home/vagrant/.tmux.conf"
   config.vm.provision "file", source: "files/vimrc", destination: "/home/vagrant/.vimrc"
-  config.vm.provision "file", source: "files/config_selinux", destination: "/etc/selinux/config"
   config.vm.provision "shell", inline: <<-SHELL
-  dnf install -y epel-release
-  echo "==> Epel release <=="
+    echo "==> Epel release <=="
+    dnf install -y epel-release
     echo ""
     echo "==> Ansible <=="
     dnf -y install ansible
