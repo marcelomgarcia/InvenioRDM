@@ -69,6 +69,7 @@ Vagrant.configure("2") do |config|
   config.vm.provision "file", source: "files/bash_aliases", destination: "/home/vagrant/.bash_aliases"
   config.vm.provision "file", source: "files/dot_tmux.conf", destination: "/home/vagrant/.tmux.conf"
   config.vm.provision "file", source: "files/vimrc", destination: "/home/vagrant/.vimrc"
+  config.vm.provision "file", source: "files/config_selinux", destination: "/etc/selinux/config"
   config.vm.provision "shell", inline: <<-SHELL
   dnf install -y epel-release
   echo "==> Epel release <=="
