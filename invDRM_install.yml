@@ -1,0 +1,46 @@
+---
+- name: configure InvenioDRM server
+  hosts: invent
+  become: true
+  become_method: sudo
+
+  tasks:
+    - name: Disable SELinux
+      ansible.posix.selinux:
+        state: disabled
+
+    - name: Update system
+      ansible.builtin.package:
+        name: "*"
+        state: latest
+
+    - name: Install Basic tools
+      ansible.builtin.package:
+        name:
+          - curl
+          - wget
+          - vim-enhanced
+          - git-all
+          - python3
+          - python3-pip
+          - python3-devel
+        state: present
+
+    - name: Development tools
+      ansible.builtin.package:
+        name:
+          - '@Development tools'
+          - kernel-devel 
+          - kernel-headers 
+          - gcc 
+          - make
+          - bzip2 
+          - perl 
+          - elfutils-libelf-devel 
+        state: present
+    # 
+    # Reboot the server at the end.
+    - name: Reboot the server
+      ansible.builtin.reboot:
+        msg: "Rebooting the server to apply configuration changes"
+        reboot_timeout: 600
