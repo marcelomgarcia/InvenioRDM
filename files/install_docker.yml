@@ -5,7 +5,7 @@
   become_method: sudo
 
   vars:
-    ansible_user: "{{ lookup('env', 'USER') }}"
+    docker_user: "{{ lookup('env', 'USER') }}"
 
   tasks:
     - name: Add Docker repository
@@ -29,6 +29,6 @@
 
     - name: Add user to docker group
       ansible.builtin.user:
-        name: "{{ ansible_user }}"
+        name: "{{ docker_user }}"
         groups: docker
         append: true
