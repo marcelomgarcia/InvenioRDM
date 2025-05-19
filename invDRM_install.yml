@@ -40,7 +40,7 @@
         state: present
     # 
     # Reboot the server at the end.
-    - name: Reboot the server
-      ansible.builtin.reboot:
-        msg: "Rebooting the server to apply configuration changes"
-        reboot_timeout: 600
+    # - name: Reboot the server
+    #   ansible.builtin.reboot:
+    #     msg: "Rebooting the server to apply configuration changes"
+    #     reboot_timeout: 600
