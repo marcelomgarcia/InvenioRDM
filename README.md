@@ -2,6 +2,16 @@
 
 ## Installation
 
+To install a InvenioDRM
+
+1. Install general depencies with `invDRM_install.yml`
+1. Reboot (recommended)
+1. Install Docker engine: `files/install_docker.yml`
+1. Install NodeJS: `files/install_nodejs.yml`
+1. Reboot (recommended(?))
+
+The following documents are for reference only. All the installation should be done using Ansible.
+
 * Debian installation: [install_debian.md](install_debian.md)
 * AlmaLinux installation: [install_almalinux.md](install_almalinux.md)
 
