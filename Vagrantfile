@@ -79,7 +79,5 @@ Vagrant.configure("2") do |config|
     echo ""
     echo "==> tmux <=="
     dnf -y install tmux
-    echo "==> wget <=="
-    dnf -y install wget
   SHELL
 end
