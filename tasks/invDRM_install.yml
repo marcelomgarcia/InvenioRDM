@@ -1,5 +1,5 @@
 ---
-- name: configure InvenioDRM server
+- name: Dependencies installation for InvenioDRM
   hosts: invent
   become: true
   become_method: sudo
@@ -38,9 +38,3 @@
           - perl 
           - elfutils-libelf-devel 
         state: present
-    # 
-    # Reboot the server at the end.
-    # - name: Reboot the server
-    #   ansible.builtin.reboot:
-    #     msg: "Rebooting the server to apply configuration changes"
-    #     reboot_timeout: 600
