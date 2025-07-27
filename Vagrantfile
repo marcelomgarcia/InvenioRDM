@@ -10,8 +10,8 @@ Vagrant.configure("2") do |config|
   # boxes at https://vagrantcloud.com/search.
   # config.vm.box = "debian/bookworm64"
   # config.vm.box_version = "12.20250126.1"
-  config.vm.box = "almalinux/9"
-  config.vm.box_version = "9.6.20250522"
+  config.vm.box = "debian/bookworm64"
+  config.vm.box_version = "12.20250126.1"
   config.vm.hostname = "invent"
 
   # Create a forwarded port mapping which allows access to a specific port
@@ -71,13 +71,9 @@ Vagrant.configure("2") do |config|
   config.vm.provision "file", source: "files/dot_tmux.conf", destination: "/home/vagrant/.tmux.conf"
   config.vm.provision "file", source: "files/vimrc", destination: "/home/vagrant/.vimrc"
   config.vm.provision "shell", inline: <<-SHELL
-    echo "==> Epel release <=="
-    dnf install -y epel-release
-    echo ""
-    echo "==> Ansible <=="
-    dnf -y install ansible
-    echo ""
+    echo "==> vim <=="
+    apt -y install vim
     echo "==> tmux <=="
-    dnf -y install tmux
+    apt -y install tmux
   SHELL
 end
