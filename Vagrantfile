@@ -70,10 +70,19 @@ Vagrant.configure("2") do |config|
   config.vm.provision "file", source: "files/bash_aliases", destination: "/home/vagrant/.bash_aliases"
   config.vm.provision "file", source: "files/dot_tmux.conf", destination: "/home/vagrant/.tmux.conf"
   config.vm.provision "file", source: "files/vimrc", destination: "/home/vagrant/.vimrc"
+  config.vm.provision "file", source: "files/install_ansible.sh", destination: "/home/vagrant/install_ansible.sh"
   config.vm.provision "shell", inline: <<-SHELL
+    echo "==> Updating package lists <=="
+    apt update
     echo "==> vim <=="
     apt -y install vim
     echo "==> tmux <=="
     apt -y install tmux
+    echo "==> gnupg <=="
+    apt -y install gnupg
+    echo "==> zstd <=="
+    apt -y install zstd
+    echo "==> Ansible <=="
+    bash /home/vagrant/install_ansible.sh
   SHELL
 end
