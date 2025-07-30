@@ -9,10 +9,28 @@
 
   tasks:
     - name: Add Docker repository
-      ansible.builtin.command: dnf config-manager --add-repo https://download.docker.com/linux/rhel/docker-ce.repo
+      block:
+        - name: Install ca-certificates and curl  
+          ansible.builtin.apt:
+            name: 
+              - ca-certificates
+              - curl
+            state: present
+            update_cache: true
+        - name: Install keyring
+          ansible.builtin.command: install -m 0755 -d /etc/apt/keyrings
+        - name: Download gpg key
+          ansible.builtin.command: curl -fsSL https://download.docker.com/linux/debian/gpg -o /etc/apt/keyrings/docker.asc
+        - name: Permission of keyring for docker
+          ansible.builtin.command: chmod a+r /etc/apt/keyrings/docker.asc
+        - name: Add the repository to Apt sources
+          ansible.builtin.apt_repository:
+            repo: "deb [arch=amd64 signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/debian bookworm stable"
+            state: present
+            filename: docker.list
 
     - name: Install Docker
-      ansible.builtin.package:
+      ansible.builtin.apt:
         name:
         - docker-ce 
         - docker-ce-cli 
@@ -20,6 +38,7 @@
         - docker-buildx-plugin 
         - docker-compose-plugin
         state: present
+        update_cache: true
 
     - name: Start and enable Docker service
       ansible.builtin.service:
