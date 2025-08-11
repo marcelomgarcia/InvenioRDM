@@ -4,7 +4,7 @@ Testing [InvenioDRM](https://inveniosoftware.org/products/rdm/) and [Caltech Aut
 
 ## Installation
 
-Installing InvenioDRM in a virtual machine running [Almalinux 9](https://wiki.almalinux.org/installation/vagrant-boxes.html#contribute-and-get-help) via [Vagrant](https://portal.cloud.hashicorp.com/vagrant/discover/almalinux/9).
+Installing InvenioDRM in a virtual machine running Debian 12 via [Vagrant](https://portal.cloud.hashicorp.com/vagrant/discover/debian/bookworm64).
 
 ### Dependencies
 
@@ -14,9 +14,11 @@ Installing InvenioDRM dependencies like development tools, wget, and others.
 1. Reboot because of the system update. (Recommended). <br>_Note_: If there is a kernel update, then probably will be necessary to rebuild the guest additions. 
 1. Install Docker engine: `files/install_docker.yml`
 1. Install NodeJS: `files/install_nodejs.yml`
-1. Reboot (recommended)
+1. Logout and login again to update path and other parts of the environment. Or simply reboot the VM.
 
 #### Virtualbox Guest Additions
+
+> Note: It seems that not mounting the shared folder was a problem with Alma only. That is, it doesn't affect Debian.
 
 If Vagrant fails to mount the shared folder, `/vagrant`, probably is because the Virtualbox Guest Additions is not installed, or it needs to be rebuild after a kernel update of the quest system or upgrade of VirtualBox on the host system.  
 
@@ -43,25 +45,7 @@ PS C:\Users\joe\Work\InvenioDRM> vagrant reload
 
 ### Invenio CLI
 
-Installing Invenio CLI:
-
-```bash
-pip install invenio-cli
-```
-
-> _Note_: the first build failed due missing depency: `limits`. Installed using `pip install limits`.
-
-Testing the installation
-
-```bash
-# Check the version of Invenio CLI:
-(invenioDRM) vagrant@bookworm:~$ invenio-cli --version
-invenio-cli, version 1.7.1
-(invenioDRM) vagrant@bookworm:~$
-```
-
-The scaffolding was according with the [Invenio documentation](https://inveniordm.docs.cern.ch/install/scaffold/). The build was following the ["For the impatient"](https://inveniordm.docs.cern.ch/install/build-setup-run/#for-the-impatient). 
-
+After installing the dependencies, follow the steps in the [InvenioDRM documentation](https://inveniordm.docs.cern.ch/install/). 
 
 ## InvenioDRM Starter
 
