@@ -83,7 +83,7 @@ Vagrant.configure("2") do |config|
     apt -y install gnupg
     echo "==> zstd <=="
     apt -y install zstd
-    echo "==> Ansible <=="
-    bash /home/vagrant/install_ansible.sh
+    # echo "==> Ansible <=="
+    # bash /home/vagrant/install_ansible.sh
   SHELL
 end
