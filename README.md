@@ -11,10 +11,10 @@ Installing InvenioDRM in a virtual machine running Debian 12 via [Vagrant](https
 Installing InvenioDRM dependencies like development tools, wget, and others.
 
 1. Install general depencies with `invDRM_install.yml`
-1. Reboot because of the system update. (Recommended). <br>_Note_: If there is a kernel update, then probably will be necessary to rebuild the guest additions. 
+1. (Optional) Reboot because of the system update. (Recommended). <br>_Note_: If there is a kernel update, then probably will be necessary to rebuild the guest additions. 
 1. Install Docker engine: `files/install_docker.yml`
 1. Install NodeJS: `files/install_nodejs.yml`
-1. Logout and login again to update path and other parts of the environment. Or simply reboot the VM.
+1. Logout and login again to update path and other parts of the environment. Or reboot the VM if you didn't done so.
 
 #### Virtualbox Guest Additions
 
