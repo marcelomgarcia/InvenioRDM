@@ -1,10 +1,10 @@
-# InvenioDRM
+# InvenioRDM
 
-Testing [InvenioDRM](https://inveniosoftware.org/products/rdm/) and [Caltech Authors](https://authors.library.caltech.edu/) as a replacement for our harvest mechanism IRTS.
+Testing [InvenioRDM](https://inveniosoftware.org/products/rdm/) and [Caltech Authors](https://authors.library.caltech.edu/) as a replacement for our harvest mechanism IRTS.
 
 ## Installation
 
-Installing InvenioDRM in a virtual machine running Debian 12 via [Vagrant](https://portal.cloud.hashicorp.com/vagrant/discover/debian/bookworm64).
+Installing InvenioRDM in a virtual machine running Debian 12 via [Vagrant](https://portal.cloud.hashicorp.com/vagrant/discover/debian/bookworm64).
 
 > Note: be careful with `git` formatitng configuration for the end of line. Since this repository is most developed under Linux but ocasionally I work on Windows, the extra character for line feed in Windows can break the scripts. The solution was to [tell Git to convert CRLF to LF on commit but not the other way around](https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration):
 
@@ -14,7 +14,7 @@ $ git config --global core.autocrlf input
 
 ### Dependencies
 
-Installing InvenioDRM dependencies like development tools, wget, and others.
+Installing InvenioRDM dependencies like development tools, wget, and others.
 
 1. Install general depencies with `invDRM_install.yml`
 1. (Optional) Reboot because of the system update. <br>_Note_: If there is a kernel update, then probably will be necessary to rebuild the guest additions (virtualbox). 
@@ -46,12 +46,12 @@ Run the `run` file to rebuild the guest addition:
 Finally, reboot the guest:
 
 ```
-PS C:\Users\joe\Work\InvenioDRM> vagrant reload
+PS C:\Users\joe\Work\InvenioRDM> vagrant reload
 ```
 
 ### Invenio CLI
 
-After installing the dependencies, follow the steps in the [InvenioDRM documentation](https://inveniordm.docs.cern.ch/install/). 
+After installing the dependencies, follow the steps in the [InvenioRDM documentation](https://inveniordm.docs.cern.ch/install/). 
 
 Basically the steps are:
 
@@ -60,7 +60,7 @@ Basically the steps are:
 1. [Lock Python dependencies](https://inveniordm.docs.cern.ch/install/build-setup-run/#python-dependencies). 
 1. [Build, setup and run the containerized preview](https://inveniordm.docs.cern.ch/install/build-setup-run/#option-2-containerized-preview).
 
-## InvenioDRM Starter
+## InvenioRDM Starter
 
-[InvenioDRM Starter](https://starter.front-matter.io/) is a pre-configured Invenio instance that includes the InvenioDRM module. It is designed to be used as a starting point for building your own Invenio-based applications.
+[InvenioRDM Starter](https://starter.front-matter.io/) is a pre-configured Invenio instance that includes the InvenioRDM module. It is designed to be used as a starting point for building your own Invenio-based applications.
 
