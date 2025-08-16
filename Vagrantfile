@@ -18,7 +18,7 @@ Vagrant.configure("2") do |config|
   # within the machine from a port on the host machine. In the example below,
   # accessing "localhost:8080" will access port 80 on the guest machine.
   # NOTE: This will enable public access to the opened port
-  config.vm.network "forwarded_port", guest: 8080, host: 80
+  config.vm.network "forwarded_port", guest: 80, host: 8080
   config.vm.network "forwarded_port", guest: 5000, host: 5000
   
   # Create a forwarded port mapping which allows access to a specific port
@@ -83,7 +83,7 @@ Vagrant.configure("2") do |config|
     apt -y install gnupg
     echo "==> zstd <=="
     apt -y install zstd
-    # echo "==> Ansible <=="
-    # bash /home/vagrant/install_ansible.sh
+    echo "==> Ansible <=="
+    bash /home/vagrant/install_ansible.sh
   SHELL
 end
