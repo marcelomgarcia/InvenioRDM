@@ -53,6 +53,12 @@ PS C:\Users\joe\Work\InvenioDRM> vagrant reload
 
 After installing the dependencies, follow the steps in the [InvenioDRM documentation](https://inveniordm.docs.cern.ch/install/). 
 
+Basically the steps are:
+
+1. [Install the CLI](https://inveniordm.docs.cern.ch/install/cli/).
+1. [Initialize](https://inveniordm.docs.cern.ch/install/initialize/).
+1. [Build, setup and run the containerized preview](https://inveniordm.docs.cern.ch/install/build-setup-run/#option-2-containerized-preview).
+
 ## InvenioDRM Starter
 
 [InvenioDRM Starter](https://starter.front-matter.io/) is a pre-configured Invenio instance that includes the InvenioDRM module. It is designed to be used as a starting point for building your own Invenio-based applications.
