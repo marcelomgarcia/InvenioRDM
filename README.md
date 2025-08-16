@@ -57,6 +57,7 @@ Basically the steps are:
 
 1. [Install the CLI](https://inveniordm.docs.cern.ch/install/cli/).
 1. [Initialize](https://inveniordm.docs.cern.ch/install/initialize/).
+1. [Lock Python dependencies](https://inveniordm.docs.cern.ch/install/build-setup-run/#python-dependencies). 
 1. [Build, setup and run the containerized preview](https://inveniordm.docs.cern.ch/install/build-setup-run/#option-2-containerized-preview).
 
 ## InvenioDRM Starter
