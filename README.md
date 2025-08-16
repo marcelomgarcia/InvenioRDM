@@ -6,6 +6,12 @@ Testing [InvenioDRM](https://inveniosoftware.org/products/rdm/) and [Caltech Aut
 
 Installing InvenioDRM in a virtual machine running Debian 12 via [Vagrant](https://portal.cloud.hashicorp.com/vagrant/discover/debian/bookworm64).
 
+> Note: be careful with `git` formatitng configuration for the end of line. Since this repository is most developed under Linux but ocasionally I work on Windows, the extra character for line feed in Windows can break the scripts. The solution was to [tell Git to convert CRLF to LF on commit but not the other way around](https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration):
+
+```
+$ git config --global core.autocrlf input
+```
+
 ### Dependencies
 
 Installing InvenioDRM dependencies like development tools, wget, and others.
