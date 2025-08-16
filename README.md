@@ -17,7 +17,7 @@ $ git config --global core.autocrlf input
 Installing InvenioDRM dependencies like development tools, wget, and others.
 
 1. Install general depencies with `invDRM_install.yml`
-1. (Optional) Reboot because of the system update. (Recommended). <br>_Note_: If there is a kernel update, then probably will be necessary to rebuild the guest additions. 
+1. (Optional) Reboot because of the system update. <br>_Note_: If there is a kernel update, then probably will be necessary to rebuild the guest additions (virtualbox). 
 1. Install Docker engine: `files/install_docker.yml`
 1. Install NodeJS: `files/install_nodejs.yml`
 1. Logout and login again to update path and other parts of the environment. Or reboot the VM if you didn't done so.
