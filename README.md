@@ -60,6 +60,13 @@ Basically the steps are:
 1. [Lock Python dependencies](https://inveniordm.docs.cern.ch/install/build-setup-run/#python-dependencies). 
 1. [Build, setup and run the local development](https://inveniordm.docs.cern.ch/install/build-setup-run/#option-1-local-development).
 
+User for testing:
+
+```
+user@demo.org
+123456
+```
+
 ## InvenioRDM Starter
 
 [InvenioRDM Starter](https://starter.front-matter.io/) is a pre-configured Invenio instance that includes the InvenioRDM module. It is designed to be used as a starting point for building your own Invenio-based applications.
