@@ -1,5 +1,5 @@
 ---
-- name: Dependencies installation for InvenioDRM
+- name: Dependencies installation for InvenioRDM
   hosts: invent
   become: true
   become_method: sudo
