@@ -1,6 +1,6 @@
 # InvenioRDM
 
-Testing [InvenioRDM](https://inveniosoftware.org/products/rdm/) and [Caltech Authors](https://authors.library.caltech.edu/) as a replacement for our harvest mechanism IRTS.
+Testing [InvenioRDM](https://inveniosoftware.org/products/rdm/) and [Caltech Authors](https://github.com/caltechlibrary/caltechauthors/tree/main?tab=readme-ov-file) as a replacement for our harvest mechanism IRTS.
 
 ## Installation
 
